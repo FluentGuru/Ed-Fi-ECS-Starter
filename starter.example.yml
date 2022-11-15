@@ -1,0 +1,30 @@
+credentials:
+  id: #AWS Access key ID
+  secret: #AWS Access Secret ID
+  session: #AWS Session token (if using WFA)
+  region: #AWS default region
+images:
+  repostioryUrl: #URL of the AWS ECR repository that will host the images
+  tag: #tag to use for the images
+  api: #name of the ODS API image on the ECR repository
+  adminapp: #name of the Admin app image on the ECR repository
+  swagger: #name of the Swagger image in the OCR repository
+services:
+  vpcId: #ID of the VPC to use
+  lbName: #name of the Application Load balancer to use
+  lbHost: #DNS hostname of the application load balancer to use
+  securityGroupId: #ID of the security group to use
+postgresql:
+  host: #hostname of the postgres RDS instance to use
+  user: #username of the postgres RDS instance
+  password: #password of the postgres RDS instance
+api:
+adminapp:
+  adminUser: #username of the default admin user
+  adminPassword: #password of the default admin user
+  encryptionKey: #AES 32-bit encryption key to be used by the admin app for encryption
+swagger:
+  populatedKey: #key to be used by swagger for secret population
+  populatedSecret: #key
+
+
