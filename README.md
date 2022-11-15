@@ -1,6 +1,10 @@
-# {Insert Repository Name Here}
+# Ed-Fi ECS Starter
 
-{Insert project information here}
+This project contains the necessary sources for the starter to run Ed-Fi ODS on AWS Elactic Container Service (ECS)
+
+# Specifications
+
+# Getting started
 
 ## Legal Information
 
