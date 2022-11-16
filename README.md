@@ -4,7 +4,19 @@ This project contains the necessary sources for the starter to run Ed-Fi ODS on 
 
 # Specifications
 
+Check out the docs folder for specifications
+
 # Getting started
+
+## Install dependencies
+The following tools are required for running the starter
+
+| Name      | Minimal version       | Required  |
+|-----------|-----------------------|-----------|
+| docker    | 18.x                  | Yes       |
+| AWS CLI   | 2.7                   | Yes       |
+| psql      | 15.0                  | Yes       |
+| Powershell| 6.0                   | Yes       |
 
 ## Legal Information
 
