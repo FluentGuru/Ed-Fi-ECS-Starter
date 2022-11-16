@@ -18,6 +18,22 @@ The following tools are required for running the starter
 | psql      | 15.0                  | Yes       |
 | Powershell| 6.0                   | Yes       |
 
+## Setup AWS Services
+
+### Setup VPC
+
+### Setup RDS
+
+### Setup Load balancer
+
+## Setup environment
+
+## Run database migrations
+
+## Build and Publish
+
+## Run deployment
+
 ## Legal Information
 
 Copyright (c) 2021 Ed-Fi Alliance, LLC and contributors.
