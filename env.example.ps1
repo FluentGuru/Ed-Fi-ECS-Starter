@@ -24,8 +24,8 @@ $env:AWS_ECR_URL=""
 $env:TAG="latest"
 
 # Database config
-$env:PGHOST = 5432
-$env:PGPORT = ""
+$env:PGHOST = ""
+$env:PGPORT = 5432
 $env:PGUSER = "postgres"
 $env:PGPASSWORD = ""
 

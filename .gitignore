@@ -1,3 +1,4 @@
 tmp/
 **.envrc
 .DS_Store
+env.ps1
