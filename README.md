@@ -1,38 +1,8 @@
 # Ed-Fi ECS Starter
 
-This project contains the necessary sources for the starter to run Ed-Fi ODS on AWS Elactic Container Service (ECS)
+This repository contains the codebase for the Ed-Fi ECS Starter. To work with what is offered in this repository, set up your ECS enviroment by referring to [Getting started with Ed-Fi ECS Starter](./START.md).
 
-# Specifications
-
-Check out the docs folder for specifications
-
-# Getting started
-
-## Install dependencies
-The following tools are required for running the starter
-
-| Name      | Minimal version       | Required  |
-|-----------|-----------------------|-----------|
-| docker    | 18.x                  | Yes       |
-| AWS CLI   | 2.7                   | Yes       |
-| psql      | 15.0                  | Yes       |
-| Powershell| 6.0                   | Yes       |
-
-## Setup AWS Services
-
-### Setup VPC
-
-### Setup RDS
-
-### Setup Load balancer
-
-## Setup environment
-
-## Run database migrations
-
-## Build and Publish
-
-## Run deployment
+Specifications and details regarding configuration and pricing can be read by reffering to [Ed-Fi ECS Starter Specifications](./SPECS.md).
 
 ## Legal Information
 

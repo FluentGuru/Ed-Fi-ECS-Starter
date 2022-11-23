@@ -7,7 +7,7 @@
 <#
 #>
 param(
-    [ValidateSet("Setup","Build", "Publish", "Migrate", "Deploy", "Remove")]
+    [ValidateSet("Setup","Build", "Publish", "Migrate", "Deploy", "Remove", "TestDB")]
     $Command = "Build"
 
 )
@@ -16,9 +16,9 @@ function Set-EdFiECSEnvironment {
     Write-Host "Loading environment..."
     if (Test-Path "$PSScriptRoot\env.ps1") {
         Invoke-Expression "$PSScriptRoot\env.ps1"
-        $env:ODSAPI_IMAGE = "$($env:AWS_ECR_URL)/developersnet-edfi-api:$($env:TAG)"
-        $env:SWAGGER_IMAGE = "$($env:AWS_ECR_URL)/developersnet-edfi-swagger:$($env:TAG)"
-        $env:ADMINAPP_IMAGE = "$($env:AWS_ECR_URL)/developersnet-edfi-adminapp:$($env:TAG)"
+        $env:ODSAPI_IMAGE = "$($env:AWS_ECR_URL)/edfi-ods-api:$($env:TAG)"
+        $env:SWAGGER_IMAGE = "$($env:AWS_ECR_URL)/edfi-ods-swagger:$($env:TAG)"
+        $env:ADMINAPP_IMAGE = "$($env:AWS_ECR_URL)/edfi-ods-adminapp:$($env:TAG)"
         $env:API_URL = "http://$($env:AWS_LB_HOSTNAME)"
     } else {
         Write-Error "no environment file configured"
@@ -133,6 +133,12 @@ DROP DATABASE IF EXISTS "EdFi_Ods" WITH (FORCE);
 "@ | psql --username "$($env:PGUSER)"  --port "$($env:PGPORT)" --dbname "postgres" --host "$($env:PGHOST)"
 }
 
+function Test-EdFiDbConnection {
+@"
+SELECT "CONNECTION SUCCEED" 
+"@ | psql --username "$($env:PGUSER)"  --port "$($env:PGPORT)" --dbname "postgres" --host "$($env:PGHOST)" 
+}
+
 
 
 
@@ -180,4 +186,5 @@ switch($Command) {
     Migrate { Invoke-Migrate }
     Deploy { Invoke-Deploy }
     Remove { Invoke-Remove }
+    TestDB { Test-EdFiDbConnection }
 }
