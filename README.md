@@ -1,6 +1,8 @@
-# {Insert Repository Name Here}
+# Ed-Fi ECS Starter
 
-{Insert project information here}
+This repository contains the codebase for the Ed-Fi ECS Starter. To work with what is offered in this repository, set up your ECS enviroment by referring to [Getting started with Ed-Fi ECS Starter](./START.md).
+
+Specifications and details regarding configuration and pricing can be read by reffering to [Ed-Fi ECS Starter Specifications](./SPECS.md).
 
 ## Legal Information
 
