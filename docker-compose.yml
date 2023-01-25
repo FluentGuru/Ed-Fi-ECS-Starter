@@ -10,7 +10,7 @@ networks:
   default:
     external: true
     name: "${AWS_SG_ID}"
-      
+
 services:
   api:
     image: "${ODSAPI_IMAGE}"

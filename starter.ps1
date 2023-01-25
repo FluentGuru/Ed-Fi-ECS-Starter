@@ -54,9 +54,9 @@ function Invoke-BuildImage(
 
 function Invoke-Build {
     Use-DockerContext "default";
-    Invoke-BuildImage $env:ODSAPI_IMAGE ./src/images/ods/ 
-    Invoke-BuildImage $env:ADMINAPP_IMAGE ./src/images/adminapp/ 
-    Invoke-BuildImage $env:SWAGGER_IMAGE ./src/images/swagger/ 
+    Invoke-BuildImage $env:ODSAPI_IMAGE ./src/images/ods/
+    Invoke-BuildImage $env:ADMINAPP_IMAGE ./src/images/adminapp/
+    Invoke-BuildImage $env:SWAGGER_IMAGE ./src/images/swagger/
 }
 
 function Invoke-PublishImage(
@@ -68,8 +68,8 @@ function Invoke-PublishImage(
 function Invoke-Publish {
     Use-DockerContext "default";
     Invoke-PublishImage $env:ODSAPI_IMAGE
-    Invoke-PublishImage $env:ADMINAPP_IMAGE    
-    Invoke-PublishImage $env:SWAGGER_IMAGE   
+    Invoke-PublishImage $env:ADMINAPP_IMAGE
+    Invoke-PublishImage $env:SWAGGER_IMAGE
 }
 
 
@@ -87,10 +87,10 @@ function Add-EdFiAdminDb {
 function Publish-EdFiAdminDb {
     Write-Host "Loading Security Database from backup..."
     psql --no-password --username "$($env:PGUSER)"  --port $($env:PGPORT) --dbname "EdFi_Security" --file ./src/migrations/EdFi_Security.sql --host "$($env:PGHOST)"
-    
+
     Write-Host "Loading Admin database from backup..."
     psql --no-password --username "$($env:PGUSER)"  --port $($env:PGPORT) --dbname "EdFi_Admin" --file ./src/migrations/EdFi_Admin.sql --host "$($env:PGHOST)"
-    
+
     Write-Host "Running Admin App database migration scripts..."
     Get-ChildItem -Path "$PSScriptRoot/src/migrations/AdminApp" -Include "*.sql" -Name | ForEach-Object {
         psql --no-password --username "$($env:PGUSER)" --port $($env:PGPORT) --dbname "EdFi_Admin" --host "$($env:PGHOST)" --file "$(Join-Path "$PSScriptRoot/src/migrations/AdminApp" $_)"
@@ -103,7 +103,7 @@ function Add-EdFiODSDb {
     CREATE DATABASE  "EdFi_Ods_Minimal_Template" TEMPLATE template0;
     GRANT ALL PRIVILEGES ON DATABASE "EdFi_Ods_Minimal_Template" TO $($env:PGUSER);
     GRANT ALL PRIVILEGES ON DATABASE postgres TO $($env:PGUSER);
-    ALTER DATABASE "EdFi_Ods_Minimal_Template" OWNER TO $($env:PGUSER); 
+    ALTER DATABASE "EdFi_Ods_Minimal_Template" OWNER TO $($env:PGUSER);
 "@| psql --username "$($env:PGUSER)"  --port $($env:PGPORT) --dbname "postgres" --host "$($env:PGHOST)"
 }
 
@@ -135,22 +135,57 @@ DROP DATABASE IF EXISTS "EdFi_Ods" WITH (FORCE);
 
 function Test-EdFiDbConnection {
 @"
-SELECT "CONNECTION SUCCEED" 
-"@ | psql --username "$($env:PGUSER)"  --port "$($env:PGPORT)" --dbname "postgres" --host "$($env:PGHOST)" 
+SELECT "CONNECTION SUCCEED"
+"@ | psql --username "$($env:PGUSER)"  --port "$($env:PGPORT)" --dbname "postgres" --host "$($env:PGHOST)"
 }
 
+$common_args = @(
+    "--execution-timeout=$installTimeout",
+    "-y",
+    "--ignore-pending-reboot"
+)
+function Install-Chocolatey {
+    if (! (Get-Command choco.exe -ErrorAction SilentlyContinue )) {
+        Set-ExecutionPolicy Bypass -Scope Process -Force
+        Invoke-WebRequest https://chocolatey.org/install.ps1 -UseBasicParsing | Invoke-Expression
+        $env:ChocolateyInstall = Convert-Path "$((Get-Command choco).path)\..\.."
+        Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+        refreshenv
+    }
+}
+function Install-Postgresql {
+    &choco install postgresql @common_args
+}
 
-
-
+function Invoke-ReplacePostgresUser {
+    $migrationDir = "./src/migrations"
+    $scripts = gci $migrationDir | Where {$_.Name -like "*.sql"}
+    foreach($script in $scripts){
+        $path = $script.FullName
+        $content = get-content $path
+        $content -replace "TO postgres;","TO $($env:PGUSER);" | Set-Content $path
+    }
+}
+function Invoke-ReplacePGUser {
+    $migrationDir = "./src/migrations"
+    $scripts = gci $migrationDir | Where {$_.Name -like "*.sql"}
+    foreach($script in $scripts){
+        $path = $script.FullName
+        $content = get-content $path
+        $content -replace "TO $($env:PGUSER);","TO postgres;" | Set-Content $path
+    }
+}
 
 function Invoke-Migrate {
     # Write-Host "Cleaning up DB"
     # Remove-EdFiDb
     Write-Host "Starting database migration..."
+    Invoke-ReplacePostgresUser
     Add-EdFiAdminDb
     Publish-EdFiAdminDb
     Add-EdFiODSDb
     Publish-EdFiODSDb
+    Invoke-ReplacePGUser
 }
 
 function Use-DockerContext(

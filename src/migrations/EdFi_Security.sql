@@ -23,7 +23,7 @@ SET row_security = off;
 CREATE SCHEMA dbo;
 
 
-ALTER SCHEMA dbo OWNER TO postgres;
+ALTER SCHEMA dbo OWNER TO exampleadmin;
 
 SET default_tablespace = '';
 
@@ -38,7 +38,7 @@ CREATE TABLE dbo.actions (
 );
 
 
-ALTER TABLE dbo.actions OWNER TO postgres;
+ALTER TABLE dbo.actions OWNER TO exampleadmin;
 
 --
 -- Name: actions_actionid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -53,7 +53,7 @@ CREATE SEQUENCE dbo.actions_actionid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.actions_actionid_seq OWNER TO postgres;
+ALTER TABLE dbo.actions_actionid_seq OWNER TO exampleadmin;
 
 --
 -- Name: actions_actionid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -72,7 +72,7 @@ CREATE TABLE dbo.applications (
 );
 
 
-ALTER TABLE dbo.applications OWNER TO postgres;
+ALTER TABLE dbo.applications OWNER TO exampleadmin;
 
 --
 -- Name: applications_applicationid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -87,7 +87,7 @@ CREATE SEQUENCE dbo.applications_applicationid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.applications_applicationid_seq OWNER TO postgres;
+ALTER TABLE dbo.applications_applicationid_seq OWNER TO exampleadmin;
 
 --
 -- Name: applications_applicationid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -108,7 +108,7 @@ CREATE TABLE dbo.authorizationstrategies (
 );
 
 
-ALTER TABLE dbo.authorizationstrategies OWNER TO postgres;
+ALTER TABLE dbo.authorizationstrategies OWNER TO exampleadmin;
 
 --
 -- Name: authorizationstrategies_authorizationstrategyid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -123,7 +123,7 @@ CREATE SEQUENCE dbo.authorizationstrategies_authorizationstrategyid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.authorizationstrategies_authorizationstrategyid_seq OWNER TO postgres;
+ALTER TABLE dbo.authorizationstrategies_authorizationstrategyid_seq OWNER TO exampleadmin;
 
 --
 -- Name: authorizationstrategies_authorizationstrategyid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -146,7 +146,7 @@ CREATE TABLE dbo.claimsetresourceclaims (
 );
 
 
-ALTER TABLE dbo.claimsetresourceclaims OWNER TO postgres;
+ALTER TABLE dbo.claimsetresourceclaims OWNER TO exampleadmin;
 
 --
 -- Name: claimsetresourceclaims_claimsetresourceclaimid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -161,7 +161,7 @@ CREATE SEQUENCE dbo.claimsetresourceclaims_claimsetresourceclaimid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.claimsetresourceclaims_claimsetresourceclaimid_seq OWNER TO postgres;
+ALTER TABLE dbo.claimsetresourceclaims_claimsetresourceclaimid_seq OWNER TO exampleadmin;
 
 --
 -- Name: claimsetresourceclaims_claimsetresourceclaimid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -181,7 +181,7 @@ CREATE TABLE dbo.claimsets (
 );
 
 
-ALTER TABLE dbo.claimsets OWNER TO postgres;
+ALTER TABLE dbo.claimsets OWNER TO exampleadmin;
 
 --
 -- Name: claimsets_claimsetid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -196,7 +196,7 @@ CREATE SEQUENCE dbo.claimsets_claimsetid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.claimsets_claimsetid_seq OWNER TO postgres;
+ALTER TABLE dbo.claimsets_claimsetid_seq OWNER TO exampleadmin;
 
 --
 -- Name: claimsets_claimsetid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -218,7 +218,7 @@ CREATE TABLE dbo.resourceclaimauthorizationmetadatas (
 );
 
 
-ALTER TABLE dbo.resourceclaimauthorizationmetadatas OWNER TO postgres;
+ALTER TABLE dbo.resourceclaimauthorizationmetadatas OWNER TO exampleadmin;
 
 --
 -- Name: resourceclaimauthorizationmet_resourceclaimauthorizationstr_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -233,7 +233,7 @@ CREATE SEQUENCE dbo.resourceclaimauthorizationmet_resourceclaimauthorizationstr_
     CACHE 1;
 
 
-ALTER TABLE dbo.resourceclaimauthorizationmet_resourceclaimauthorizationstr_seq OWNER TO postgres;
+ALTER TABLE dbo.resourceclaimauthorizationmet_resourceclaimauthorizationstr_seq OWNER TO exampleadmin;
 
 --
 -- Name: resourceclaimauthorizationmet_resourceclaimauthorizationstr_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -256,7 +256,7 @@ CREATE TABLE dbo.resourceclaims (
 );
 
 
-ALTER TABLE dbo.resourceclaims OWNER TO postgres;
+ALTER TABLE dbo.resourceclaims OWNER TO exampleadmin;
 
 --
 -- Name: resourceclaims_resourceclaimid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -271,7 +271,7 @@ CREATE SEQUENCE dbo.resourceclaims_resourceclaimid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.resourceclaims_resourceclaimid_seq OWNER TO postgres;
+ALTER TABLE dbo.resourceclaims_resourceclaimid_seq OWNER TO exampleadmin;
 
 --
 -- Name: resourceclaims_resourceclaimid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -291,7 +291,7 @@ CREATE TABLE public."DeployJournal" (
 );
 
 
-ALTER TABLE public."DeployJournal" OWNER TO postgres;
+ALTER TABLE public."DeployJournal" OWNER TO exampleadmin;
 
 --
 -- Name: DeployJournal_schemaversionsid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -306,7 +306,7 @@ CREATE SEQUENCE public."DeployJournal_schemaversionsid_seq"
     CACHE 1;
 
 
-ALTER TABLE public."DeployJournal_schemaversionsid_seq" OWNER TO postgres;
+ALTER TABLE public."DeployJournal_schemaversionsid_seq" OWNER TO exampleadmin;
 
 --
 -- Name: DeployJournal_schemaversionsid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
