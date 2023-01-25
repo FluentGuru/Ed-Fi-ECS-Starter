@@ -23,7 +23,7 @@ SET row_security = off;
 CREATE SCHEMA dbo;
 
 
-ALTER SCHEMA dbo OWNER TO postgres;
+ALTER SCHEMA dbo OWNER TO exampleadmin;
 
 --
 -- Name: getclientfortoken(uuid); Type: FUNCTION; Schema: dbo; Owner: postgres
@@ -70,7 +70,7 @@ END
 $$;
 
 
-ALTER FUNCTION dbo.getclientfortoken(accesstoken uuid) OWNER TO postgres;
+ALTER FUNCTION dbo.getclientfortoken(accesstoken uuid) OWNER TO exampleadmin;
 
 SET default_tablespace = '';
 
@@ -84,7 +84,7 @@ CREATE TABLE dbo.apiclientapplicationeducationorganizations (
 );
 
 
-ALTER TABLE dbo.apiclientapplicationeducationorganizations OWNER TO postgres;
+ALTER TABLE dbo.apiclientapplicationeducationorganizations OWNER TO exampleadmin;
 
 --
 -- Name: apiclientownershiptokens; Type: TABLE; Schema: dbo; Owner: postgres
@@ -97,7 +97,7 @@ CREATE TABLE dbo.apiclientownershiptokens (
 );
 
 
-ALTER TABLE dbo.apiclientownershiptokens OWNER TO postgres;
+ALTER TABLE dbo.apiclientownershiptokens OWNER TO exampleadmin;
 
 --
 -- Name: apiclientownershiptokens_apiclientownershiptokenid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -112,7 +112,7 @@ CREATE SEQUENCE dbo.apiclientownershiptokens_apiclientownershiptokenid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.apiclientownershiptokens_apiclientownershiptokenid_seq OWNER TO postgres;
+ALTER TABLE dbo.apiclientownershiptokens_apiclientownershiptokenid_seq OWNER TO exampleadmin;
 
 --
 -- Name: apiclientownershiptokens_apiclientownershiptokenid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -146,7 +146,7 @@ CREATE TABLE dbo.apiclients (
 );
 
 
-ALTER TABLE dbo.apiclients OWNER TO postgres;
+ALTER TABLE dbo.apiclients OWNER TO exampleadmin;
 
 --
 -- Name: apiclients_apiclientid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -161,7 +161,7 @@ CREATE SEQUENCE dbo.apiclients_apiclientid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.apiclients_apiclientid_seq OWNER TO postgres;
+ALTER TABLE dbo.apiclients_apiclientid_seq OWNER TO exampleadmin;
 
 --
 -- Name: apiclients_apiclientid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -181,7 +181,7 @@ CREATE TABLE dbo.applicationeducationorganizations (
 );
 
 
-ALTER TABLE dbo.applicationeducationorganizations OWNER TO postgres;
+ALTER TABLE dbo.applicationeducationorganizations OWNER TO exampleadmin;
 
 --
 -- Name: applicationeducationorganizat_applicationeducationorganizat_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -196,7 +196,7 @@ CREATE SEQUENCE dbo.applicationeducationorganizat_applicationeducationorganizat_
     CACHE 1;
 
 
-ALTER TABLE dbo.applicationeducationorganizat_applicationeducationorganizat_seq OWNER TO postgres;
+ALTER TABLE dbo.applicationeducationorganizat_applicationeducationorganizat_seq OWNER TO exampleadmin;
 
 --
 -- Name: applicationeducationorganizat_applicationeducationorganizat_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -219,7 +219,7 @@ CREATE TABLE dbo.applications (
 );
 
 
-ALTER TABLE dbo.applications OWNER TO postgres;
+ALTER TABLE dbo.applications OWNER TO exampleadmin;
 
 --
 -- Name: applications_applicationid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -234,7 +234,7 @@ CREATE SEQUENCE dbo.applications_applicationid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.applications_applicationid_seq OWNER TO postgres;
+ALTER TABLE dbo.applications_applicationid_seq OWNER TO exampleadmin;
 
 --
 -- Name: applications_applicationid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -255,7 +255,7 @@ CREATE TABLE dbo.aspnetroleclaims (
 );
 
 
-ALTER TABLE dbo.aspnetroleclaims OWNER TO postgres;
+ALTER TABLE dbo.aspnetroleclaims OWNER TO exampleadmin;
 
 --
 -- Name: aspnetroleclaims_id_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -283,7 +283,7 @@ CREATE TABLE dbo.aspnetroles (
 );
 
 
-ALTER TABLE dbo.aspnetroles OWNER TO postgres;
+ALTER TABLE dbo.aspnetroles OWNER TO exampleadmin;
 
 --
 -- Name: aspnetuserclaims; Type: TABLE; Schema: dbo; Owner: postgres
@@ -297,7 +297,7 @@ CREATE TABLE dbo.aspnetuserclaims (
 );
 
 
-ALTER TABLE dbo.aspnetuserclaims OWNER TO postgres;
+ALTER TABLE dbo.aspnetuserclaims OWNER TO exampleadmin;
 
 --
 -- Name: aspnetuserclaims_id_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -325,7 +325,7 @@ CREATE TABLE dbo.aspnetuserlogins (
 );
 
 
-ALTER TABLE dbo.aspnetuserlogins OWNER TO postgres;
+ALTER TABLE dbo.aspnetuserlogins OWNER TO exampleadmin;
 
 --
 -- Name: aspnetuserroles; Type: TABLE; Schema: dbo; Owner: postgres
@@ -337,7 +337,7 @@ CREATE TABLE dbo.aspnetuserroles (
 );
 
 
-ALTER TABLE dbo.aspnetuserroles OWNER TO postgres;
+ALTER TABLE dbo.aspnetuserroles OWNER TO exampleadmin;
 
 --
 -- Name: aspnetusers; Type: TABLE; Schema: dbo; Owner: postgres
@@ -362,7 +362,7 @@ CREATE TABLE dbo.aspnetusers (
 );
 
 
-ALTER TABLE dbo.aspnetusers OWNER TO postgres;
+ALTER TABLE dbo.aspnetusers OWNER TO exampleadmin;
 
 --
 -- Name: aspnetusertokens; Type: TABLE; Schema: dbo; Owner: postgres
@@ -376,7 +376,7 @@ CREATE TABLE dbo.aspnetusertokens (
 );
 
 
-ALTER TABLE dbo.aspnetusertokens OWNER TO postgres;
+ALTER TABLE dbo.aspnetusertokens OWNER TO exampleadmin;
 
 --
 -- Name: clientaccesstokens; Type: TABLE; Schema: dbo; Owner: postgres
@@ -390,7 +390,7 @@ CREATE TABLE dbo.clientaccesstokens (
 );
 
 
-ALTER TABLE dbo.clientaccesstokens OWNER TO postgres;
+ALTER TABLE dbo.clientaccesstokens OWNER TO exampleadmin;
 
 --
 -- Name: odsinstancecomponents; Type: TABLE; Schema: dbo; Owner: postgres
@@ -405,7 +405,7 @@ CREATE TABLE dbo.odsinstancecomponents (
 );
 
 
-ALTER TABLE dbo.odsinstancecomponents OWNER TO postgres;
+ALTER TABLE dbo.odsinstancecomponents OWNER TO exampleadmin;
 
 --
 -- Name: odsinstancecomponents_odsinstancecomponentid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -420,7 +420,7 @@ CREATE SEQUENCE dbo.odsinstancecomponents_odsinstancecomponentid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.odsinstancecomponents_odsinstancecomponentid_seq OWNER TO postgres;
+ALTER TABLE dbo.odsinstancecomponents_odsinstancecomponentid_seq OWNER TO exampleadmin;
 
 --
 -- Name: odsinstancecomponents_odsinstancecomponentid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -443,7 +443,7 @@ CREATE TABLE dbo.odsinstances (
 );
 
 
-ALTER TABLE dbo.odsinstances OWNER TO postgres;
+ALTER TABLE dbo.odsinstances OWNER TO exampleadmin;
 
 --
 -- Name: odsinstances_odsinstanceid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -458,7 +458,7 @@ CREATE SEQUENCE dbo.odsinstances_odsinstanceid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.odsinstances_odsinstanceid_seq OWNER TO postgres;
+ALTER TABLE dbo.odsinstances_odsinstanceid_seq OWNER TO exampleadmin;
 
 --
 -- Name: odsinstances_odsinstanceid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -477,7 +477,7 @@ CREATE TABLE dbo.ownershiptokens (
 );
 
 
-ALTER TABLE dbo.ownershiptokens OWNER TO postgres;
+ALTER TABLE dbo.ownershiptokens OWNER TO exampleadmin;
 
 --
 -- Name: ownershiptokens_ownershiptokenid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -492,7 +492,7 @@ CREATE SEQUENCE dbo.ownershiptokens_ownershiptokenid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.ownershiptokens_ownershiptokenid_seq OWNER TO postgres;
+ALTER TABLE dbo.ownershiptokens_ownershiptokenid_seq OWNER TO exampleadmin;
 
 --
 -- Name: ownershiptokens_ownershiptokenid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -511,7 +511,7 @@ CREATE TABLE dbo.profileapplications (
 );
 
 
-ALTER TABLE dbo.profileapplications OWNER TO postgres;
+ALTER TABLE dbo.profileapplications OWNER TO exampleadmin;
 
 --
 -- Name: profiles; Type: TABLE; Schema: dbo; Owner: postgres
@@ -523,7 +523,7 @@ CREATE TABLE dbo.profiles (
 );
 
 
-ALTER TABLE dbo.profiles OWNER TO postgres;
+ALTER TABLE dbo.profiles OWNER TO exampleadmin;
 
 --
 -- Name: profiles_profileid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -538,7 +538,7 @@ CREATE SEQUENCE dbo.profiles_profileid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.profiles_profileid_seq OWNER TO postgres;
+ALTER TABLE dbo.profiles_profileid_seq OWNER TO exampleadmin;
 
 --
 -- Name: profiles_profileid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -559,7 +559,7 @@ CREATE TABLE dbo.users (
 );
 
 
-ALTER TABLE dbo.users OWNER TO postgres;
+ALTER TABLE dbo.users OWNER TO exampleadmin;
 
 --
 -- Name: users_userid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -574,7 +574,7 @@ CREATE SEQUENCE dbo.users_userid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.users_userid_seq OWNER TO postgres;
+ALTER TABLE dbo.users_userid_seq OWNER TO exampleadmin;
 
 --
 -- Name: users_userid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -594,7 +594,7 @@ CREATE TABLE dbo.vendornamespaceprefixes (
 );
 
 
-ALTER TABLE dbo.vendornamespaceprefixes OWNER TO postgres;
+ALTER TABLE dbo.vendornamespaceprefixes OWNER TO exampleadmin;
 
 --
 -- Name: vendornamespaceprefixes_vendornamespaceprefixid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -609,7 +609,7 @@ CREATE SEQUENCE dbo.vendornamespaceprefixes_vendornamespaceprefixid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.vendornamespaceprefixes_vendornamespaceprefixid_seq OWNER TO postgres;
+ALTER TABLE dbo.vendornamespaceprefixes_vendornamespaceprefixid_seq OWNER TO exampleadmin;
 
 --
 -- Name: vendornamespaceprefixes_vendornamespaceprefixid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -628,7 +628,7 @@ CREATE TABLE dbo.vendors (
 );
 
 
-ALTER TABLE dbo.vendors OWNER TO postgres;
+ALTER TABLE dbo.vendors OWNER TO exampleadmin;
 
 --
 -- Name: vendors_vendorid_seq; Type: SEQUENCE; Schema: dbo; Owner: postgres
@@ -643,7 +643,7 @@ CREATE SEQUENCE dbo.vendors_vendorid_seq
     CACHE 1;
 
 
-ALTER TABLE dbo.vendors_vendorid_seq OWNER TO postgres;
+ALTER TABLE dbo.vendors_vendorid_seq OWNER TO exampleadmin;
 
 --
 -- Name: vendors_vendorid_seq; Type: SEQUENCE OWNED BY; Schema: dbo; Owner: postgres
@@ -663,7 +663,7 @@ CREATE TABLE public."DeployJournal" (
 );
 
 
-ALTER TABLE public."DeployJournal" OWNER TO postgres;
+ALTER TABLE public."DeployJournal" OWNER TO exampleadmin;
 
 --
 -- Name: DeployJournal_schemaversionsid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
@@ -678,7 +678,7 @@ CREATE SEQUENCE public."DeployJournal_schemaversionsid_seq"
     CACHE 1;
 
 
-ALTER TABLE public."DeployJournal_schemaversionsid_seq" OWNER TO postgres;
+ALTER TABLE public."DeployJournal_schemaversionsid_seq" OWNER TO exampleadmin;
 
 --
 -- Name: DeployJournal_schemaversionsid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
